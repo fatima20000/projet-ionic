@@ -26,6 +26,7 @@ npm-debug.log*
 /coverage
 /dist
 /Gitlab/devmobilionic/node_modules
+/IONIC/project-ionic/project-ionic/node_modules
 */node_modules
 /platforms
 /plugins
