@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Direction</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<ion-card>
+  <ion-card-header>
+    <ion-card-title color="primary"> <center><strong>Liste des directions</strong></center> </ion-card-title>
+  </ion-card-header>
+  <center>
+    <strong>
+      <ion-card-content *ngIf="!dataDirection">
+        <ion-button color="success" (click)="affiche()">Lister</ion-button>
+      </ion-card-content>
+    </strong>
+  </center>
+  
+  <ion-card-content *ngIf="dataDirection">
+    <ion-card>
+    
+      <ion-row> 
+        <ion-col col-4>
+          <button (click)="modalDirection()" ><ion-icon name="Add" ></ion-icon>Add</button>
+        </ion-col>
+        <ion-col col-4>
+          <button (click)="downloadD()" ><ion-icon name="download" ></ion-icon>Import</button>
+        </ion-col>
+        <ion-col col-4>
+          <button (click)="shareD()" ><ion-icon name="share" ></ion-icon>Export</button>
+        </ion-col>
+      </ion-row>
+    
+  </ion-card>
+    <ion-row style="border-bottom: groove;">
+
+    <ion-col col-4>
+      <ion-label><strong>CODE</strong></ion-label>
+    </ion-col>
+
+    <ion-col col-4>
+      <ion-label ><strong>DESIGNATION</strong></ion-label>
+    </ion-col>
+
+    <ion-col col-4>
+      <ion-label ><strong>ACTION</strong></ion-label>
+    </ion-col>
+
+  </ion-row>
+      <ion-menu-toggle *ngFor="let d of dataDirection">
+
+        <ion-row style="border-bottom: groove;">
+          
+          <ion-col col-4>
+            <ion-label >{{d.code}}</ion-label>
+          </ion-col>
+
+          <ion-col col-4>
+            <ion-label >{{d.libelle}}</ion-label>
+          </ion-col>
+            
+          <ion-col col-4>
+            <button color="primary" (click)="modifier(d)"><ion-icon name="create" style="color:var(--ion-color-primary);"></ion-icon></button>|
+             <button color="primary" (click)="supprimer(d)"><ion-icon name="trash" style="color:var(--ion-color-primary);"></ion-icon></button>
+          </ion-col>
+        
+        </ion-row>
+
+  </ion-menu-toggle>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

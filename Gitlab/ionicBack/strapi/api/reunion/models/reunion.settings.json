@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reunions",
+  "info": {
+    "name": "Reunion",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "code": {
+      "type": "string"
+    },
+    "dateDebut": {
+      "type": "datetime"
+    },
+    "dateFin": {
+      "type": "datetime"
+    },
+    "salle": {
+      "via": "reunions",
+      "model": "salle"
+    },
+    "employes": {
+      "via": "reunions",
+      "collection": "employe",
+      "dominant": true
+    }
+  }
+}

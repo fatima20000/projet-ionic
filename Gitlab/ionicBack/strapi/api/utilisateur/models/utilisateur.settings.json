@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "utilisateurs",
+  "info": {
+    "name": "Utilisateur"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tel": {
+      "type": "string"
+    },
+    "motPass": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "profils": {
+      "via": "utilisateurs",
+      "collection": "profil"
+    }
+  }
+}

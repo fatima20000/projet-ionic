@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "employes",
+  "info": {
+    "name": "Employe",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "code": {
+      "type": "string"
+    },
+    "nom": {
+      "type": "string"
+    },
+    "prenom": {
+      "type": "string"
+    },
+    "reunions": {
+      "via": "employes",
+      "collection": "reunion"
+    },
+    "direction": {
+      "via": "employes",
+      "model": "direction"
+    }
+  }
+}

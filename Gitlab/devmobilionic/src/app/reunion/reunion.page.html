@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Réunion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        <center>
+          <strong>
+            <ion-button (click)="afficheReunionFutur()">Réunion futur</ion-button>
+            <ion-button (click)="afficheReunionArchive()" color="danger">Réunion archi</ion-button>
+          </strong>
+        </center>
+      </ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content *ngIf="dataFutur">
+
+      <center><strong>Réunions futures</strong></center>
+
+      <ion-row style="border-bottom: groove;">
+  
+      <ion-col col-4>
+        <ion-label><strong>CODE</strong></ion-label>
+      </ion-col>
+  
+      <ion-col col-4>
+        <ion-label ><strong>DATE DEBUT</strong></ion-label>
+      </ion-col>
+
+      <ion-col col-4>
+        <ion-label ><strong>DATE FIN</strong></ion-label>
+      </ion-col>
+  
+    </ion-row>
+        <ion-menu-toggle *ngFor="let r of dataFutur">
+  
+          <ion-row style="border-bottom: groove;">
+            
+            <ion-col col-4>
+              <ion-label >{{r.code}}</ion-label>
+            </ion-col>
+  
+            <ion-col col-4>
+              <ion-label >{{r.dateDebut}}</ion-label>
+            </ion-col>
+
+            <ion-col col-4>
+              <ion-label >{{r.dateFin}}</ion-label>
+            </ion-col>
+          
+          </ion-row>
+          
+    </ion-menu-toggle>
+  </ion-card-content>
+
+  <ion-card-content *ngIf="dataArchive">
+
+    <center><strong>Réunions archivées</strong></center>
+
+    <ion-row style="border-bottom: groove;">
+  
+      <ion-col col-4>
+        <ion-label><strong>CODE</strong></ion-label>
+      </ion-col>
+  
+      <ion-col col-4>
+        <ion-label ><strong>DATE DEBUT</strong></ion-label>
+      </ion-col>
+
+      <ion-col col-4>
+        <ion-label ><strong>DATE FIN</strong></ion-label>
+      </ion-col>
+  
+    </ion-row>
+        <ion-menu-toggle *ngFor="let r of dataArchive">
+  
+          <ion-row style="border-bottom: groove;">
+            
+            <ion-col col-4>
+              <ion-label >{{r.code}}</ion-label>
+            </ion-col>
+  
+            <ion-col col-4>
+              <ion-label >{{r.dateDebut}}</ion-label>
+            </ion-col>
+
+            <ion-col col-4>
+              <ion-label >{{r.dateFin}}</ion-label>
+            </ion-col>
+          
+          </ion-row>
+        
+  </ion-menu-toggle>
+</ion-card-content>
+
+  </ion-card>
+
+</ion-content>
+  

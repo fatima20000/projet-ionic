@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "directions",
+  "info": {
+    "name": "Direction",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "code": {
+      "type": "string"
+    },
+    "employes": {
+      "via": "direction",
+      "collection": "employe"
+    },
+    "libelle": {
+      "type": "string"
+    }
+  }
+}

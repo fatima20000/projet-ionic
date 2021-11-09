@@ -1,0 +1,23 @@
+<meta http-equiv="refresh" content="">
+<ion-content padding>
+<ion-card-content aria-modal="true" class="ngModel">
+  <ion-header>
+    <ion-toolbar color = "danger">
+      <ion-title><strong><center>Authentification</center></strong></ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-list>
+    <form #f="ngForm" (ngSubmit) = "onLogin(f.value)">
+      <ion-item>
+        <ion-label position="floating">Identifiant</ion-label>
+        <ion-input type="text" (ionChange)="newLogin($event)" name="username" ngModel placeholder="User name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Mot de passe</ion-label>
+        <ion-input type="password" (ionChange)="newPassword($event)" name="password" ngModel placeholder="Mot de passe"></ion-input>
+      </ion-item>
+      <center><ion-button [disabled]="balanceInput.invalid" type="submit" expand="block">Submit</ion-button></center>
+    </form>  
+  </ion-list>
+</ion-card-content>
+</ion-content>
