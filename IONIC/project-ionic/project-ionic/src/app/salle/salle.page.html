@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Salle
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Salle</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-item routerLink="/login" routerLinkActive="active" routerDirection="root" detail="true">
+  <ion-icon slot="start" name="log-in"></ion-icon>
+  <ion-label>
+    Se connecter
+  </ion-label>
+</ion-item>
+<ion-item routerLink="/register" routerLinkActive="active" routerDirection="root" detail="true">
+  <ion-icon slot="start" name="register"></ion-icon>
+  <ion-label>
+    S'inscrire
+  </ion-label>
+</ion-item>
+  <app-explore-container name="Salle page"></app-explore-container>
+</ion-content>
